@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Audiophile Brand Colors - Exact Specifications */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 22 65% 57%; /* #D87D4A */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%; /* #F1F1F1 */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 97%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 22 65% 57%;
+    --dark: 0 0% 10%; /* #191919 */
+
+    /* Charts */
+    --chart-1: 22 65% 57%;
+    --chart-2: 0 0% 10%;
+    --chart-3: 0 0% 95%;
+    --chart-4: 0 0% 50%;
+    --chart-5: 0 0% 70%;
+
+    /* Sidebar */
+    --sidebar: 0 0% 95%;
+    --sidebar-background: 0 0% 95%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 22 65% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 22 65% 57%;
+
+    /* Fonts */
+    --font-sans: manrope, sans-serif;
+    --font-serif: manrope, sans-serif;
+    --font-mono: manrope, monospace;
+
+    /* Shadows */
+    --shadow-2xs: 0px 4px 8px -1px hsl(0deg 0% 0% / 5%);
+    --shadow-xs: 0px 4px 8px -1px hsl(0deg 0% 0% / 5%);
+    --shadow-sm: 0px 4px 8px -1px hsl(0deg 0% 0% / 10%), 0px 1px 2px -2px hsl(0deg 0% 0% / 10%);
+    --shadow: 0px 4px 8px -1px hsl(0deg 0% 0% / 10%), 0px 1px 2px -2px hsl(0deg 0% 0% / 10%);
+    --shadow-md: 0px 4px 8px -1px hsl(0deg 0% 0% / 10%), 0px 2px 4px -2px hsl(0deg 0% 0% / 10%);
+    --shadow-lg: 0px 4px 8px -1px hsl(0deg 0% 0% / 10%), 0px 4px 6px -2px hsl(0deg 0% 0% / 10%);
+    --shadow-xl: 0px 4px 8px -1px hsl(0deg 0% 0% / 10%), 0px 8px 10px -2px hsl(0deg 0% 0% / 10%);
+    --shadow-2xl: 0px 4px 8px -1px hsl(0deg 0% 0% / 25%);
+
+    /* Misc */
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 22 65% 57%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 22 65% 57%;
+    --chart-1: 22 65% 57%;
+    --chart-2: 0 0% 90%;
+    --chart-3: 0 0% 15%;
+    --chart-4: 0 0% 50%;
+    --chart-5: 0 0% 30%;
+    --sidebar: 0 0% 10%;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 22 65% 57%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 22 65% 57%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    font-family: var(--font-sans), Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: var(--tracking-normal);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--accent)) hsl(var(--secondary));
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--accent));
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
